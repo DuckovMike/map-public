@@ -1,0 +1,151 @@
+:root {
+    overflow-x: hidden;
+
+    --main-col: #004c97;
+    --back-col: #0072e3;
+
+    --text-bright: #fff;
+    --text-dark: #000;
+
+    --border-bright: #fff;
+    --border-dark: #000;
+
+    --shadow-bright: #fff;
+    --shadow-dark: #000;
+
+    color: var(--text-bright);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--border-bright);
+}
+
+#body {
+    display: flex;
+}
+
+#body > *{
+    border: solid 4px var(--border-bright);
+}
+
+#description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    
+    font-size: 0;
+    width: 0;
+    opacity: 0;
+    border: 0px;
+    animation: descr 1s ease 0.7s forwards;
+
+    padding: 0.5em;
+    margin: 1em 2em 0 0;
+    border-radius: 1rem;
+    background-color: var(--back-col);
+}
+
+@keyframes descr {
+    from {
+        opacity: 0;
+        border: 0px;
+        width: 0;
+        font-size: 0;
+    }
+    to {
+        opacity: 1;
+        width: 40%;
+        border: solid 4px var(--border-bright);
+        font-size: 1rem;
+    }
+}
+
+hr {
+    width: 90%;
+    border: 0.5px solid black;
+    border-radius: 2px;
+}
+
+#region {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    font-size: small;
+    text-transform: initial;
+}
+
+
+polygon, path {
+    fill: var(--border-bright);
+    stroke: black;
+    transition: fill 0.2s ease;
+}
+
+polygon:hover, path:hover {
+    fill: var(--back-col);
+}
+
+#map {
+    margin: 1em 1em 0 2em;
+    border-radius: 1em;
+    background-color: var(--main-col);
+}
+
+
+
+#sight-edit {
+    width: 100%;
+    height: calc(100% - 50px);
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    left: 0;
+    top: 0;
+    animation: sight-edit 0.7s ease forwards;
+}
+
+@keyframes sight-edit {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(-50px);
+    }
+}
+
+#sight-edit > form {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 1em 0;
+
+    -webkit-backdrop-filter: blur();
+    background-color: #0005;
+    backdrop-filter: blur(10px);
+}
+
+#sight-edit > form > input, textarea{
+    margin: 1em 0;
+    border: none;
+    height: 2em;
+    border-radius: 0.5em;
+    text-align: center;
+   
+}
+
+#sight-edit > form > label {
+    color: var(--text-bright);
+    font-size: large;
+    text-shadow: 0 0 4px var(--shadow-dark);
+}
+
+
+
+
