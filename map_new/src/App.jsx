@@ -18,7 +18,7 @@ export default function App() {
 
   async function saveData() {
     try {
-    const response = await fetch('http://localhost:8000/save', {
+    const response = await fetch('http://85.143.217.205/api//save', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
